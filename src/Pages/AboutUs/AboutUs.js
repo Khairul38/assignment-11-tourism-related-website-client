@@ -1,4 +1,5 @@
 import React from 'react';
+import about from '../../Images/img-about.jpg'
 
 const AboutUs = () => {
     return (
@@ -117,7 +118,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <div className="d-lg-flex align-items-center my-5">
-                <img className="img-fluid" src="http://maystudio.link/traveloky/img/img-about.jpg" alt="" />
+                <img className="img-fluid" src={about} alt="" />
                 <div className="m-5">
                     <h1 className=" fw-bold">WE ARE <span className="text-color">TRAVELOKY</span></h1>
                     <br />

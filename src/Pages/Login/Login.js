@@ -14,7 +14,6 @@ const Login = () => {
 
     /* Redirect */
     const location = useLocation();
-    console.log('came from', location.state?.from);
     const history = useHistory();
     const redirect_url = location?.state?.from || '/';
 
