@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 
 const BookingItem = (props) => {
     const { img, name, price } = props.booking.package;
-    const { email, address, phone } = props.booking;
+    const { _id, email, address, phone } = props.booking;
     return (
         <div>
             <Col className="shadow-lg">
@@ -18,7 +18,7 @@ const BookingItem = (props) => {
                             <h6>Contact: {phone}</h6>
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
-                            <button type="button" className="btn btn-outline-primary btn-sm">Delete</button>
+                            <button onClick={() => props.handleDeletePackage(_id)} type="button" className="btn btn-outline-primary btn-sm">Cancel</button>
 
                             <h4><span className="text-color">${price}</span>/Person</h4>
                         </div>
