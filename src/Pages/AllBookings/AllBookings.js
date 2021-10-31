@@ -12,6 +12,28 @@ const AllBookings = () => {
             .then(data => setBookings(data))
     }, [])
 
+    // Update Status
+    const handleUpdateStatus = id => {
+        const proceed = window.confirm('Are You Sure, You Want To Update');
+        if (proceed) {
+            const url = `https://wicked-nightmare-49756.herokuapp.com/bookings/${id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ status: 'Approved' })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.modifiedCount > 0) {
+                        alert('Status Update Successfully');
+                        window.location.reload();
+                    }
+                })
+        }
+    }
     // Delete a Package
     const handleDeletePackage = id => {
         const proceed = window.confirm('Are You Sure, You Want To Cancel');
@@ -40,7 +62,7 @@ const AllBookings = () => {
                 <div className="container my-5">
                     <Row xs={1} md={3} className="g-5 p-4">
                         {
-                            bookings.map(booking => <BookingItem key={booking._id} booking={booking} handleDeletePackage={handleDeletePackage}></BookingItem>)
+                            bookings.map(booking => <BookingItem key={booking._id} booking={booking} handleDeletePackage={handleDeletePackage} handleUpdateStatus={handleUpdateStatus}></BookingItem>)
                         }
                     </Row>
                 </div>

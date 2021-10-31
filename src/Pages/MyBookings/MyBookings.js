@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth/useAuth';
-import BookingItem from '../Item/BookingItem';
+import MyBookingItem from '../Item/MyBookingItem';
 import './MyBookings.css';
 
 const MyBookings = () => {
@@ -47,7 +47,7 @@ const MyBookings = () => {
                 <div className="container my-5">
                     <Row xs={1} md={3} className="g-5 p-4">
                         {
-                            bookings.map(booking => <BookingItem key={booking._id} booking={booking} handleDeletePackage={handleDeletePackage}></BookingItem>)
+                            bookings.map(booking => <MyBookingItem key={booking._id} booking={booking} handleDeletePackage={handleDeletePackage}></MyBookingItem>)
                         }
                     </Row>
                 </div>

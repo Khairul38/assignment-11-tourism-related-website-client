@@ -1,25 +1,29 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import useAuth from '../../Hooks/useAuth/useAuth';
+import './BookingDetails.css';
 
 const BookingDetails = () => {
     const { register, handleSubmit, reset } = useForm();
     const { bookingId } = useParams();
     const { services, allContext } = useAuth();
     const { user } = allContext;
+    const history = useHistory();
 
     const bookingData = services.find(service => service._id === bookingId);
 
     const onSubmit = data => {
         data.package = bookingData;
+        data.status = 'Pending';
 
         axios.post('https://wicked-nightmare-49756.herokuapp.com/bookings', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Booking Processed Successfully');
                     reset();
+                    history.push('/myBookings');
                 }
             })
     };
@@ -27,15 +31,15 @@ const BookingDetails = () => {
         <div className="">
             <div className="align-items-center mx-auto">
                 <img className="w-100 h-50" src={bookingData?.img} alt="" />
-                <div className="container row my-5 mx-auto">
-                    <div className="col-lg-6">
+                <div className="container row my-5 mx-auto align-items-center">
+                    <div className="col-lg-6 mb-4">
                         <h1 className=" fw-bold text-color">{bookingData?.name}</h1>
                         <p>{bookingData?.description}</p>
                     </div>
-                    <div className="col-lg-6 text-center">
+                    <div className="col-lg-6 text-center place-booking">
                         <h1>Book This Tour</h1>
                         <p>Arrange your trip in advance - book this tour now!</p>
-                        <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
+                        <form className="booking-form d-block" onSubmit={handleSubmit(onSubmit)}>
 
                             <input defaultValue={user.displayName} {...register("name", { required: true })} />
 
