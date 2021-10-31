@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './ServiceItem.css'
 
 const ServiceItem = (props) => {
-    const { key, img, name, detail, price } = props.service;
+    const { _id, img, name, description, price } = props.service;
     return (
         <div>
             <Col className="shadow-lg text-center">
@@ -13,10 +13,10 @@ const ServiceItem = (props) => {
                     <Card.Body>
                         <Card.Title className="text-color">{name}</Card.Title>
                         <div>
-                            <p>{detail}</p>
+                            <p>{description}</p>
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
-                            <Link to={`/services/${key}`}>
+                            <Link to={`/booking/${_id}`}>
                                 <button type="button" className="btn btn-outline-primary btn-sm">Book Now</button>
                             </Link>
                             <h4><span className="text-color">${price}</span>/Person</h4>

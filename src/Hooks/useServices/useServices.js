@@ -4,7 +4,7 @@ import { useState } from 'react';
 const useServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('/services.json')
+        fetch('https://wicked-nightmare-49756.herokuapp.com/packages')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);

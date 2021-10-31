@@ -2,15 +2,18 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Context/AuthProvider';
 import AboutUs from './Pages/AboutUs/AboutUs';
+import AddPackage from './Pages/AddPackage/AddPackage';
+import AllBookings from './Pages/AllBookings/AllBookings';
+import BookingDetails from './Pages/BookingDetails/BookingDetails';
 import Destinations from './Pages/Destinations/Destinations';
 import Footer from './Pages/Footer/Footer';
 import Header from './Pages/Header/Header';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import MyBookings from './Pages/MyBookings/MyBookings';
 import NotFound from './Pages/NotFound/NotFound';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Register from './Pages/Register/Register';
-import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
 import Services from './Pages/Services/Services';
 
 function App() {
@@ -26,7 +29,7 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <PrivateRoute exact path="/services">
+            <PrivateRoute exact path="/packages">
               <Services></Services>
             </PrivateRoute>
             <PrivateRoute path="/destinations">
@@ -41,8 +44,17 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <PrivateRoute path="/services/:serviceId">
-              <ServiceDetail></ServiceDetail>
+            <PrivateRoute path="/myBookings">
+              <MyBookings></MyBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/allBookings">
+              <AllBookings></AllBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/addPackage">
+              <AddPackage></AddPackage>
+            </PrivateRoute>
+            <PrivateRoute path="/booking/:bookingId">
+              <BookingDetails></BookingDetails>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>

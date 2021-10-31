@@ -23,7 +23,7 @@ const Header = () => {
                                 <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/services">
+                                <Link className="nav-link" to="/packages">
                                     Packages
                                 </Link>
                             </li>
@@ -40,7 +40,17 @@ const Header = () => {
                         </ul>
                         {user.email ?
                             <>
-                                <h5 className="me-3">{user.displayName}</h5>
+                                <li className="navbar-nav nav-item dropdown me-3">
+                                    <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dashboard
+                                    </Link>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><Link className="dropdown-item" to="/myBookings">My Bookings</Link></li>
+                                        <li><Link className="dropdown-item" to="/allBookings">Manage All Bookings</Link></li>
+                                        <li><Link className="dropdown-item" to="/addPackage">Add a New Package</Link></li>
+                                    </ul>
+                                </li>
+                                <h5 className="me-3 my-2 text-color">{user.displayName}</h5>
                                 <button onClick={logout} className="btn btn-primary">Logout</button>
                             </> :
                             <div className="d-flex gap-3">

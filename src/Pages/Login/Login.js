@@ -44,7 +44,7 @@ const Login = () => {
                     <span className="d-block text-danger">
                         {error}
                     </span>
-                    <h6 class>Don’t have an account? <Link to='/register'>Register</Link></h6>
+                    <h6>Don’t have an account? <Link to='/register'>Register</Link></h6>
                 </div>
             </div>
         </div >

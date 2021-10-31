@@ -43,7 +43,7 @@ const Register = () => {
                     <span className="d-block text-danger">
                         {error}
                     </span>
-                    <h6 class>Already have an account? <Link to='/login'>login</Link></h6>
+                    <h6>Already have an account? <Link to='/login'>login</Link></h6>
                 </div>
             </div>
         </div>
