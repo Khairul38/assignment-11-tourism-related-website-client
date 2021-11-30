@@ -2,14 +2,12 @@
 
 Our Live Website [Traveloky](https://tourism-related-website-1e883.web.app/).
 
-### * DISCOVER THE WORLD YOU HAVE NEVER SEEN
+### ● Traveloky is a traveling-related MERN stack website.
 
-### * Our Traveller are Our Priority, We Offer Quality Services of Specialists Guide.
+### ● This application is fully responsive for mobile, desktop, and tablet. And the authentication system was added as well.
 
-### * We provide Professional Guide, Exclusive Handpicked Hotels, Track your Progress, Emergency services, 10+ Year of travel experience, Affordable Price, 90% Of our traveller happy.
+### ● The login user can see their dashboard in this application so that the users can manage what they ordered.
 
-### * Wherever you want to go and whatever you want to do, makes it easy and supports you with 24/7 customer support. 28 million reported accommodation listings, including over 6.2 million homes, apartments, and other unique places to stay
+### ● If the user isn’t login he/she won't be able to order anything, they will be redirected to the login page.
 
-### * About Our Traveloky
-
-Founded in 1996 in Amsterdam, traveloky has grown from a small Dutch start-up to one of the world’s leading digital travel companies. Part of Traveloky Holdings Inc. (NASDAQ: BKNG), Traveloky’s mission is to make it easier for everyone to experience the world.
+### ● Technology Used: HTML | CSS | Bootstrap | React.js | Node.js | Express.js | Mongodb | Firebase | React Route | React hook form

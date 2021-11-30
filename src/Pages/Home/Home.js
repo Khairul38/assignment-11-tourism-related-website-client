@@ -126,7 +126,6 @@ const Home = () => {
                     </Row>
                 </div>
             </div>
-
         </div>
     );
 };

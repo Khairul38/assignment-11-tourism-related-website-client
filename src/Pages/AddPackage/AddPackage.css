@@ -20,7 +20,7 @@
     border-radius: 20px;
 }
 
-.add-packages form input, textarea {
+.add-packages form input, .massage {
     width: 200%;
     margin-bottom: 15px;
     padding: 10px;

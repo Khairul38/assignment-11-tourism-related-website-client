@@ -10,7 +10,7 @@ const AllBookings = () => {
         fetch('https://wicked-nightmare-49756.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => setBookings(data))
-    }, [])
+    }, [bookings])
 
     // Update Status
     const handleUpdateStatus = id => {
@@ -26,10 +26,9 @@ const AllBookings = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.modifiedCount > 0) {
                         alert('Status Update Successfully');
-                        window.location.reload();
+                        // window.location.reload();
                     }
                 })
         }
